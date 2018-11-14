@@ -60,5 +60,25 @@ int main()
 
 void selectiosort(int *arr,int arrsize){
 
+    int smallest,smallest_index;
+
+    for(int i=0;i<arrsize-1;i++)
+    {    cout<<"pass "<<i+1<<"=>";
+         smallest=arr[i];
+         smallest_index=i;
+        for(int j=i+1;j<arrsize;j++)
+        {
+            if(arr[j]<smallest)
+            {
+                smallest=arr[j];
+                smallest_index=j;
+            }
+        }
+        arr[smallest_index]=arr[i];
+        arr[i]=smallest;
+        display(arr,arrsize);
+        cout<<"\n";
+    }
+
 }
 
